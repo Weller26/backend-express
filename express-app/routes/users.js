@@ -33,7 +33,7 @@ router.get('/:id', function(req, res, next) {
       res.status(500);
     }
     else if (rows.length === 0) {
-      res.status(404).send({"message": "No users found"});
+      res.status(404).send({"message": "User not found"});
     }
     else {
       res.status(200).send(rows);
