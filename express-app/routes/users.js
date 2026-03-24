@@ -8,7 +8,7 @@ items = [
   {"id": 2, "name": "Илья"},
 ]
 router.get('/', function(req, res, next) {
-  res.send('Hello, world!');
+  res.send(items);
 });
 
 module.exports = router;
