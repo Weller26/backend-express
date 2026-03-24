@@ -27,13 +27,20 @@ router.post('/', function(req, res) {
 })
 
 router.get('/:id', function(req, res, next) {
-  // const targetId = Number(req.params.id);
+  const targetId = Number(req.params.id);
   // const user = items.filter(item => item.id === targetId);
   // if (user.length === 0) {
   //   res.status(404).json({"message": "User not found"});
   // } else {
   //   res.status(200).json(user);
   // }
+  db.all("SELECT id, name FROM users WHERE id = (?)", [targetId], (err, rows) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.status(200).send(rows);
+    }
+  });
 })
 
 module.exports = router;
