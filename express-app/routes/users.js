@@ -9,7 +9,7 @@ items = [
 ]
 let LAST_ID = 2;
 router.get('/', function(req, res, next) {
-  res.send('Hello, world!');
+  res.status(200).json(items);
 });
 
 router.post('/', function(req, res) {
